@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "Make your SASS or LESS code customizable!"
+description: "In this post, we evaluate how Bootstrap supports LESS code customizable with pure client side JavaScript."
+keywords: sass.js, less.js, javascript, bootstrap
 date:   2015-05-10 10:29:44
 categories: eday 
 ---
