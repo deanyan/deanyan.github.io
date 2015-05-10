@@ -1,0 +1,13 @@
+# Site settings
+title: To <b>{eval}</b>uate your <b>{J}</b>ava<b>{S}</b>cript code as a habit 
+email: admin@evaljs.com
+description: > # this means to ignore newlines until "baseurl:"
+               A site where you can put your JavaScript code for reviewers to evaluate code quality;
+               also a site to learn good code practice from tech-savvy.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://evaljs.com" # the base hostname & protocol for your site
+twitter_username: yanhuiyi
+github_username:  deanyan
+
+# Build settings
+markdown: kramdown
