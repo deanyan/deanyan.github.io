@@ -2,7 +2,7 @@
 layout: post
 title:  "Make your SASS or LESS code customizable!"
 date:   2015-05-10 10:29:44
-categories: javascript sass update
+categories: eday 
 ---
 I've recently been working on an inside tasks, which we write our own skin theme using SASS, with modular way no doubt. We devide files into variables, utils, buttons, header, tips etc. Then a natural idea come to my mind, that's if we want to change the color theme to differents, radius of button more sharp, what should we do? The answers is to change each SASS variables line by line. Sure, it's one way to make it, but it's time consuming and little appreciate. We're technician, aren't we?
 There should be a routine script instead of us to do that. This is the way [Bootstrap customize][bootstrap-customize] enlightens.
