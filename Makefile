@@ -10,6 +10,6 @@ deploy:
 	git ci -m "Deploy site to github server"
 	git push origin master
 	git co development
-    echo "Switch to branch development, deploy to github server succeed"
-    git push origin development
-    echo "Push development code to github repo"
+	echo "Switch to branch development, deploy to github server succeed"
+	git push origin development
+	echo "Push development code to github repo"
