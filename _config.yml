@@ -1,6 +1,6 @@
 # Site settings
 title: To <b>{eval}</b>uate your <b>{J}</b>ava<b>{S}</b>cript code as a habit 
-email: admin@evaljs.com
+email: contact@evaljs.com
 description: > # this means to ignore newlines until "baseurl:"
                A site where you can put your JavaScript code for reviewers to evaluate code quality;
                also a site to learn good code practice from tech-savvy.
