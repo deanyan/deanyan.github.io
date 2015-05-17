@@ -6,19 +6,19 @@
 </description>
     <link>http://evaljs.com/</link>
     <atom:link href="http://evaljs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 15 May 2015 18:52:29 +0800</pubDate>
-    <lastBuildDate>Fri, 15 May 2015 18:52:29 +0800</lastBuildDate>
+    <pubDate>Sun, 17 May 2015 14:23:35 +0800</pubDate>
+    <lastBuildDate>Sun, 17 May 2015 14:23:35 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Make your SASS or LESS code customizable!</title>
-        <description>&lt;p&gt;I’ve recently been working on an inside tasks, which we write our own skin theme using SASS, with modular way no doubt. We devide files into variables, utils, buttons, header, tips etc. Then a natural idea come to my mind, that’s if we want to change the color theme to differents, radius of button more sharp, what should we do? The answers is to change each SASS variables line by line. Sure, it’s one way to make it, but it’s time consuming and little appreciate. We’re technician, aren’t we?
+        <description>&lt;p&gt;I’ve recently been working on an inside task, which we write our own skin theme using SASS with a modular way. We devide files into variables, utils, buttons, header, tips etc. Then a natural idea come to my mind - if we want to change the color theme to different ones, radius of button more sharp, what should we do? The answers is to change each SASS variables line by line. Sure, it’s one way to make it, but it’s time consuming and little appreciate. We’re technicians, aren’t we?
 There should be a routine script instead of us to do that. This is the way &lt;a href=&quot;http://getbootstrap.com/customize&quot;&gt;Bootstrap customize&lt;/a&gt; enlightens.&lt;/p&gt;
 
-&lt;p&gt;You see the most heavy hard work is of dozens of input fields where you put into desired value, for other check boxs, they’re as simple as if your include them in your code or not. Then how will make your input custom value be back, and work in your ‘download’ code. There could be a read-write process for your variables.scss files, then it involes server side code, nodejs, ruby, php etc. Well, if you look into the code of docs Bootstrap on github &lt;a href=&quot;https://github.com/twbs/bootstrap/tree/master/docs&quot;&gt;github-bootstrap-docs&lt;/a&gt;, you disclose
+&lt;p&gt;You see the most heavy hard work is dozens of input fields where you put into desired value, for other check boxs, they’re as simple as if your include them in your code or not. Then how will make your input custom value be back, and work in your ‘download’ code. There could be a read-write process for your variables.scss files, then it involes server side code, nodejs, ruby, php etc. Well, if you look into the code of docs Bootstrap on github &lt;a href=&quot;https://github.com/twbs/bootstrap/tree/master/docs&quot;&gt;github-bootstrap-docs&lt;/a&gt;, you disclose
 the myth. Let’s crack into code, see what the code do.&lt;/p&gt;
 
-&lt;p&gt;All the heavy-lifting is made by file customizer.js, the call stack is generateCSS, generateLESS, generateCustomLess and in the end compileLESS. The interesting thing is there’s not any logic relating with file reading/writing, it’s all client-side JavaScript code. How can it be?Well, if you look into function of generateLESS,&lt;/p&gt;
+&lt;p&gt;All the heavy-lifting is made by file customizer.js, the call stack is generateCSS, generateLESS, generateCustomLess and in the end compileLESS. The interesting thing is there’s not any logic relating with file reading/writing, it’s all client-side JavaScript code. How can it be? Well, if you look into function of generateLESS,&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;generateLESS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lessFilename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lessFileIncludes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lessSource&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;__less&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lessFilename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
@@ -94,6 +94,10 @@ the myth. Let’s crack into code, see what the code do.&lt;/p&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;At last, the compiled CSS code will be zipped(by a JavaScript implementation) for you save(a JavaScript implementation as well).&lt;/p&gt;
+
+&lt;p&gt;The Bootstrap customize use client side &lt;a href=&quot;http://lesscss.org&quot;&gt;LESS&lt;/a&gt; to compile, in our project, we use SASS so a client side &lt;a href=&quot;https://github.com/medialize/sass.js&quot;&gt;SASS&lt;/a&gt; is instead used.&lt;/p&gt;
+
+&lt;p&gt;Besides, in customize.js file you see several client side JavaScript implementations for &lt;a href=&quot;https://github.com/dsamarin&quot;&gt;Blob&lt;/a&gt;, &lt;a href=&quot;http://stuartk.com/jszip&quot;&gt;zip&lt;/a&gt;, &lt;a href=&quot;https://github.com/eligrey/FileSaver.js&quot;&gt;filesave&lt;/a&gt;, which used to be with the back-end area. We’ll inspect more details in comming posts.&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 10 May 2015 18:29:44 +0800</pubDate>

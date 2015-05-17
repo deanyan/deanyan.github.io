@@ -77,13 +77,13 @@
     </header>
 
     <article class="post-content">
-    <p>I’ve recently been working on an inside tasks, which we write our own skin theme using SASS, with modular way no doubt. We devide files into variables, utils, buttons, header, tips etc. Then a natural idea come to my mind, that’s if we want to change the color theme to differents, radius of button more sharp, what should we do? The answers is to change each SASS variables line by line. Sure, it’s one way to make it, but it’s time consuming and little appreciate. We’re technician, aren’t we?
+    <p>I’ve recently been working on an inside task, which we write our own skin theme using SASS with a modular way. We devide files into variables, utils, buttons, header, tips etc. Then a natural idea come to my mind - if we want to change the color theme to different ones, radius of button more sharp, what should we do? The answers is to change each SASS variables line by line. Sure, it’s one way to make it, but it’s time consuming and little appreciate. We’re technicians, aren’t we?
 There should be a routine script instead of us to do that. This is the way <a href="http://getbootstrap.com/customize">Bootstrap customize</a> enlightens.</p>
 
-<p>You see the most heavy hard work is of dozens of input fields where you put into desired value, for other check boxs, they’re as simple as if your include them in your code or not. Then how will make your input custom value be back, and work in your ‘download’ code. There could be a read-write process for your variables.scss files, then it involes server side code, nodejs, ruby, php etc. Well, if you look into the code of docs Bootstrap on github <a href="https://github.com/twbs/bootstrap/tree/master/docs">github-bootstrap-docs</a>, you disclose
+<p>You see the most heavy hard work is dozens of input fields where you put into desired value, for other check boxs, they’re as simple as if your include them in your code or not. Then how will make your input custom value be back, and work in your ‘download’ code. There could be a read-write process for your variables.scss files, then it involes server side code, nodejs, ruby, php etc. Well, if you look into the code of docs Bootstrap on github <a href="https://github.com/twbs/bootstrap/tree/master/docs">github-bootstrap-docs</a>, you disclose
 the myth. Let’s crack into code, see what the code do.</p>
 
-<p>All the heavy-lifting is made by file customizer.js, the call stack is generateCSS, generateLESS, generateCustomLess and in the end compileLESS. The interesting thing is there’s not any logic relating with file reading/writing, it’s all client-side JavaScript code. How can it be?Well, if you look into function of generateLESS,</p>
+<p>All the heavy-lifting is made by file customizer.js, the call stack is generateCSS, generateLESS, generateCustomLess and in the end compileLESS. The interesting thing is there’s not any logic relating with file reading/writing, it’s all client-side JavaScript code. How can it be? Well, if you look into function of generateLESS,</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">generateLESS</span><span class="p">(</span><span class="nx">lessFilename</span><span class="p">,</span> <span class="nx">lessFileIncludes</span><span class="p">,</span> <span class="nx">vars</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">lessSource</span> <span class="o">=</span> <span class="nx">__less</span><span class="p">[</span><span class="nx">lessFilename</span><span class="p">]</span>
@@ -159,6 +159,10 @@ the myth. Let’s crack into code, see what the code do.</p>
 <span class="p">}</span></code></pre></div>
 
 <p>At last, the compiled CSS code will be zipped(by a JavaScript implementation) for you save(a JavaScript implementation as well).</p>
+
+<p>The Bootstrap customize use client side <a href="http://lesscss.org">LESS</a> to compile, in our project, we use SASS so a client side <a href="https://github.com/medialize/sass.js">SASS</a> is instead used.</p>
+
+<p>Besides, in customize.js file you see several client side JavaScript implementations for <a href="https://github.com/dsamarin">Blob</a>, <a href="http://stuartk.com/jszip">zip</a>, <a href="https://github.com/eligrey/FileSaver.js">filesave</a>, which used to be with the back-end area. We’ll inspect more details in comming posts.</p>
 
 
     </article>
