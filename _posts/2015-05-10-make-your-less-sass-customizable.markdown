@@ -6,13 +6,13 @@ keywords: sass.js, less.js, javascript, bootstrap
 date:   2015-05-10 10:29:44
 categories: eday 
 ---
-I've recently been working on an inside tasks, which we write our own skin theme using SASS, with modular way no doubt. We devide files into variables, utils, buttons, header, tips etc. Then a natural idea come to my mind, that's if we want to change the color theme to differents, radius of button more sharp, what should we do? The answers is to change each SASS variables line by line. Sure, it's one way to make it, but it's time consuming and little appreciate. We're technician, aren't we?
+I've recently been working on an inside task, which we write our own skin theme using SASS with a modular way. We devide files into variables, utils, buttons, header, tips etc. Then a natural idea come to my mind - if we want to change the color theme to different ones, radius of button more sharp, what should we do? The answers is to change each SASS variables line by line. Sure, it's one way to make it, but it's time consuming and little appreciate. We're technicians, aren't we?
 There should be a routine script instead of us to do that. This is the way [Bootstrap customize][bootstrap-customize] enlightens.
 
-You see the most heavy hard work is of dozens of input fields where you put into desired value, for other check boxs, they're as simple as if your include them in your code or not. Then how will make your input custom value be back, and work in your 'download' code. There could be a read-write process for your variables.scss files, then it involes server side code, nodejs, ruby, php etc. Well, if you look into the code of docs Bootstrap on github [github-bootstrap-docs], you disclose
+You see the most heavy hard work is dozens of input fields where you put into desired value, for other check boxs, they're as simple as if your include them in your code or not. Then how will make your input custom value be back, and work in your 'download' code. There could be a read-write process for your variables.scss files, then it involes server side code, nodejs, ruby, php etc. Well, if you look into the code of docs Bootstrap on github [github-bootstrap-docs], you disclose
 the myth. Let's crack into code, see what the code do.
 
-All the heavy-lifting is made by file customizer.js, the call stack is generateCSS, generateLESS, generateCustomLess and in the end compileLESS. The interesting thing is there's not any logic relating with file reading/writing, it's all client-side JavaScript code. How can it be?Well, if you look into function of generateLESS, 
+All the heavy-lifting is made by file customizer.js, the call stack is generateCSS, generateLESS, generateCustomLess and in the end compileLESS. The interesting thing is there's not any logic relating with file reading/writing, it's all client-side JavaScript code. How can it be? Well, if you look into function of generateLESS, 
 
 {% highlight javascript %}
 function generateLESS(lessFilename, lessFileIncludes, vars) {
@@ -96,5 +96,14 @@ function compileLESS(lessSource, baseFilename, intoResult) {
 
 At last, the compiled CSS code will be zipped(by a JavaScript implementation) for you save(a JavaScript implementation as well).
 
+The Bootstrap customize use client side [LESS][less.js] to compile, in our project, we use SASS so a client side [SASS][sass.js] is instead used.
+
+Besides, in customize.js file you see several client side JavaScript implementations for [Blob][blob.js], [zip][jszip.js], [filesave][filesaver.js], which used to be with the back-end area. We'll inspect more details in comming posts.
+
 [bootstrap-customize]: http://getbootstrap.com/customize 
 [github-bootstrap-docs]: https://github.com/twbs/bootstrap/tree/master/docs
+[less.js]: http://lesscss.org
+[sass.js]: https://github.com/medialize/sass.js
+[blob.js]: https://github.com/dsamarin
+[jszip.js]: http://stuartk.com/jszip
+[filesaver.js]: https://github.com/eligrey/FileSaver.js 
