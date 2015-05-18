@@ -4,6 +4,7 @@ email: contact@evaljs.com
 description: > # this means to ignore newlines until "baseurl:"
                A site where you can put your JavaScript code for reviewers to evaluate code quality;
                also a site to learn good code practice from tech-savvy.
+keywords: javascript, html, css, source code
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://evaljs.com" # the base hostname & protocol for your site
 twitter_username: yanhuiyi
