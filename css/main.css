@@ -266,7 +266,10 @@ pre {
 }
 
 .copyright-text {
-	
+	font-size: 12px;
+	font-weight: 700;
+	text-align: center;
+	margin: 0 auto;
 }
 
 /**
