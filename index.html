@@ -22,6 +22,7 @@
            ga('create', 'UA-62827456-1', 'auto');
            ga('send', 'pageview');
  </script>
+	  <script src="https://browser.sentry-cdn.com/4.0.6/bundle.min.js" crossorigin="anonymous"></script>
 </head>
 
 
@@ -157,7 +158,9 @@
 	</div>
 </div>
 
-
+<script>
+	Sentry.init({ dsn: 'https://f7aed0735daa4f49aa4be6c0c0e4fbeb@sentry.io/1291304' });
+	  </script>
   </body>
 
 </html>
